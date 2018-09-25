@@ -1,0 +1,37 @@
+1.initDc:
+in:date
+
+out:2.station_train_code\  
+stations.get_name(from_station)\start_time  \
+stations.get_name(to_station)\arrive_time \
+ticket_num  \prices \users
+
+    3.tk
+    4.leftTicketStr, station_train_code, from_station, to_station, 
+        train_location, train_no, tk
+
+    5.key_check_isChange, leftTicketStr,train_location,tk
+
+return
+station_train_code, stations.get_name(from_station) ,start_time, 
+stations.get_name(to_station) ,arrive_time  ,ticket_num ,prices ,users ,tk
+leftTicketStr , from_station, to_station, train_location, train_no,key_check_isChange
+
+
+
+2.buy_info:
+in:date \station_train_code\  
+stations.get_name(from_station)\start_time  \
+stations.get_name(to_station)\arrive_time \
+ticket_num  \prices \users
+
+
+3.checkOrderInfo
+in:seat, name, id, phone, tk
+out 1,-1
+
+4.getQueueCount
+in:leftTicketStr, station_train_code, from_station, to_station, train_location, train_no,seat,date,tk
+
+5.confirmSingleForQueue
+in:key_check_isChange,leftTicketStr,oldPassengerStr,passengerTicketStr,train_location,tk
